@@ -190,9 +190,6 @@ public class FloatingPanelController: UIViewController, UIScrollViewDelegate, UI
             log.warning("Already added to a parent(\(parent))")
             return
         }
-        precondition((parent is UINavigationController) == false, "UINavigationController displays only one child view controller at a time.")
-        precondition((parent is UITableViewController) == false, "UITableViewController should not be the parent because the view hierarchy will be break in reusing cells.")
-        precondition((parent is UICollectionViewController) == false, "UICollectionViewController should not be the parent because the view hierarchy will be break in reusing cells.")
 
         view.frame = parent.view.bounds
         if let belowView = belowView {
